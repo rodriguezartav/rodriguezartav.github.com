@@ -26,11 +26,20 @@ Usage:
   {% for node in pages_list %}
     {% if node.title != null %}
       {% if group == null or group == node.group %}
-      	{% if page.url == node.url %}
-      	<li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
-      	{% else %}
-      	<li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
-      	{% endif %}
+
+      	<li>
+      	<div class="row-fluid">
+      	  <div class="span12">
+      	<a href="{{ BASE_PATH }}{{node.url}}">
+          <h1>
+          {{node.title}}
+          </h1>
+        </a>
+      	{{ node.content }}
+        </div>
+        </div>
+        <hr/>
+      	</li>
       {% endif %}
     {% endif %}
   {% endfor %}

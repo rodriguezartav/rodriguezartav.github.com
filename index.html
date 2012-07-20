@@ -1,0 +1,11 @@
+---
+layout: page
+title: Hello World!
+tagline: Supporting tagline
+---
+{% include JB/setup %}
+
+ <ul class="unstyled postList">
+{% assign pages_list = site.posts %}  
+{% include JB/pages_list %}
+</ul>
